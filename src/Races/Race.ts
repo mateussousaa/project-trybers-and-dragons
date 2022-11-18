@@ -1,8 +1,14 @@
 abstract class Race {
+  private _name:string;
+  private _dexterity:number;
+  
   constructor(
-    private _name: string,
-    private _dexterity: number,
-  ) {}
+    name: string,
+    dexterity: number,
+  ) {
+    this._name = name;
+    this._dexterity = dexterity;
+  }
 
   get name() {
     return this._name;
