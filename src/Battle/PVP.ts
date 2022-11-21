@@ -15,7 +15,7 @@ class PVP extends Battle {
       this._player1.attack(this._player2); 
       this._player2.attack(this._player1);
 
-      const winner = PVP.verifyHasAWinner(this._player1, this._player2);
+      const winner = this.verifyHasAWinner();
       if (winner !== 0) {
         hasAWinner = true;
         return winner;
@@ -24,11 +24,11 @@ class PVP extends Battle {
     return 0;
   }
   
-  private static verifyHasAWinner(player1: Fighter, player2: Fighter): number {
-    if (player1.lifePoints === -1) {
+  private verifyHasAWinner(): number {
+    if (this._player1.lifePoints === -1) {
       return -1;
     }
-    if (player2.lifePoints === -1) {
+    if (this._player2.lifePoints === -1) {
       return 1;
     }
     return 0;
